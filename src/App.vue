@@ -91,7 +91,7 @@ export default {
             href="#"
             role="button"
             aria-expanded="false"
-            >Surat</a
+            >Info Surat</a
           >
           <ul class="dropdown-menu">
             <li v-for="surah in surahs" :key="surah.id">
