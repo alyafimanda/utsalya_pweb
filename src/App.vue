@@ -103,9 +103,11 @@ export default {
           </ul>
         </li>
         <li class="nav-item">
-          <router-link :to="{ name: 'search' }" class="nav-link"
-            >Cari</router-link
-          >
+          <router-link :to="{ name: 'search' }" class="nav-link">Cari</router-link>
+        </li>
+
+        <li class="nav-item">
+          <router-link :to="{ name: 'random' }" class="nav-link">Pilih Ayat Acak</router-link>
         </li>
       </ul>
       <RouterView />

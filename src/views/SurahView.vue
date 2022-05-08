@@ -7,43 +7,56 @@ export default {
     return {
       error: false,
       loading: true,
-      info: '',
+      info: "",
       surah: ref([]),
-      infosurah: ref([])
-    }
+      infosurah: ref([]),
+    };
+  },
+
+  watch: {
+    $route() {
+      this.getSurah();
+      this.getInfoSurah();
+    },
   },
 
   mounted() {
-    this.getSurah()
-    this.getInfoSurah()
+    this.getSurah();
+    this.getInfoSurah();
   },
 
   methods: {
     getSurah() {
-      axios.get('https://api.quran.com/api/v4/chapters/' + this.$route.params.id)
-        .then(response => {
-          this.surah = response.data.chapter
+      axios
+        .get("https://api.quran.com/api/v4/chapters/" + this.$route.params.id)
+        .then((response) => {
+          this.surah = response.data.chapter;
         })
-        .catch(error => {
-          console.log(error)
-          this.error = true
+        .catch((error) => {
+          console.log(error);
+          this.error = true;
         })
-        .finally(() => this.loading = false)
+        .finally(() => (this.loading = false));
     },
     getInfoSurah() {
-      axios.get('https://api.quran.com/api/v4/chapters/' + this.$route.params.id + '/info?language=id')
-        .then(response => {
-          this.infosurah = response.data.chapter_info
-          this.info = this.infosurah.text
+      axios
+        .get(
+          "https://api.quran.com/api/v4/chapters/" +
+            this.$route.params.id +
+            "/info?language=id"
+        )
+        .then((response) => {
+          this.infosurah = response.data.chapter_info;
+          this.info = this.infosurah.text;
         })
-        .catch(error => {
-          console.log(error)
-          this.error = true
+        .catch((error) => {
+          console.log(error);
+          this.error = true;
         })
-        .finally(() => this.loading = false)
-    }
-  }
-}
+        .finally(() => (this.loading = false));
+    },
+  },
+};
 </script>
 
 <template>
