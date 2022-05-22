@@ -99,7 +99,7 @@ export default {
   <section class="hero is-small">
     <div class="hero-body">
       <p class="title">Random Ayat</p>
-      <p class="subtitle">Random Ayat from https://api.quran.com/</p>
+      <p class="subtitle"></p>
     </div>
   </section>
   <section class="content">
